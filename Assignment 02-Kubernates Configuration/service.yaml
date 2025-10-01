@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: app-service
+  namespace: zujajamussawar   # 👈 your username
+spec:
+  selector:
+    app: assignment2          # 👈 matches your Deployment labels
+  ports:
+    - port: 8080              # internal cluster port
+      targetPort: 8080        # container port
+      nodePort: 30000         # port on your local machine
+  type: NodePort              # exposes it outside the cluster

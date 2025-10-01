@@ -1,0 +1,12 @@
+Repository: https://github.com/zujajamussawar/assignment2-app
+Comments:
+- App built using Node.js + Express.
+- Exposed endpoints: /configValue, /secretValue, /envValue
+- Namespace: zujajamussawar
+- Apply order: 
+   1. namespace.yaml
+   2. configmap.yaml
+   3. secret.yaml
+   4. deployment.yaml
+   5. service.yaml
+- Everything should work as expected. Endpoints return values from ConfigMap, Secret, and environment variable.

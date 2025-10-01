@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-deployment
+  namespace: zujajamussawar   # 👈 your namespace
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: assignment2
+  template:
+    metadata:
+      labels:
+        app: assignment2
+    spec:
+      containers:
+      - name: app-container
+        image: zujajamussawar/assignment2-app:latest   # 👈 your DockerHub image
+        ports:
+        - containerPort: 8080
+        env:
+        - name: CONFIG_VALUE
+          valueFrom:
+            configMapKeyRef:
+              name: app-config
+              key: configValue
+        - name: SECRET_VALUE
+          valueFrom:
+            secretKeyRef:
+              name: app-secret
+              key: secretValue
+        - name: ENV_VALUE
+          value: environmentSnake
