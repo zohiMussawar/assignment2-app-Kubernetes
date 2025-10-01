@@ -1,4 +1,4 @@
-Repository: https://github.com/zujajamussawar/assignment2-app
+Repository: git remote add origin https://github.com/zohiMussawar/assignment2-app-Kubernetes.git
 Comments:
 - App built using Node.js + Express.
 - Exposed endpoints: /configValue, /secretValue, /envValue
